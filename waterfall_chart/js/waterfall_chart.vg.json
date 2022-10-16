@@ -199,6 +199,48 @@
             "value": 0
           }
         }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontSize": 12,
+          "xOffset": -20,
+          "dy": -163,
+          "yOffset": 20,
+          "align": "left"
+        },
+        "encoding": {
+          "text": {"value": ["Relatively huge","increase in 2009"]},
+          "opacity":{
+            "condition": [
+              {
+                "test": "datum.Country == 'Australia' && datum.label == 2009", "value": 1
+              }
+            ], 
+            "value": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontSize": 12,
+          "xOffset": -20,
+          "dy": 58,
+          "yOffset": 20,
+          "align": "left"
+        },
+        "encoding": {
+          "text": {"value": ["Relatively huge","increase in 2009"]},
+          "opacity":{
+            "condition": [
+              {
+                "test": "datum.Country == 'Malaysia' && datum.label == 2009", "value": 1
+              }
+            ], 
+            "value": 0
+          }
+        }
       }
     ],
     "config": {"text": {"fontWeight": "bold", "color": "#404040"}}

@@ -87,6 +87,30 @@
               {"field": "Average life expectancy (age)", "type": "quantitative", "format": ".1f"}
             ]
           }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 11,
+            "fontWeight":"bold",
+            "baseline": "top",
+            "align": "center",
+            "color": "darkblue",
+            "dx": 0,
+            "dy": 13
+          },
+          "encoding": {
+            "y": {"field": "Average life expectancy (age)", "type": "quantitative", "axis":{"title": "Amount"}},
+            "text": {"value": ["Constantly increasing"]},
+            "opacity":{
+              "condition": [
+                {
+                  "test": "datum['Average life expectancy (age)'] == 69.03606557", "value": 1
+                }
+              ], 
+              "value": 0
+            }
+          }
         }
       ]},
       {
@@ -165,6 +189,29 @@
                 {"field": "Year", "type": "temporal", "format": "%Y"},
                 {"field": "Average infant death rate (cases per 1000 population)", "type": "quantitative", "format": ".1f"}
               ]
+            }
+          },
+          {
+            "mark": {
+              "type": "text",
+              "fontSize": 11,
+              "fontWeight":"bold",
+              "baseline": "top",
+              "align": "center",
+              "color": "#950000",
+              "dx": 18,
+              "dy": 13
+            },
+            "encoding": {
+              "text": {"value": ["Constantly decreasing"]},
+              "opacity":{
+                "condition": [
+                  {
+                    "test": "datum['Average infant death rate (cases per 1000 population)'] == 30.61", "value": 1
+                  }
+                ], 
+                "value": 0
+              }
             }
           }
         ]
@@ -247,6 +294,29 @@
               {"field": "Year", "type": "temporal", "format": "%Y"},
               {"field": "Average schooling duration (years)", "type": "quantitative", "format": ".1f"}
             ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 11,
+            "fontWeight":"bold",
+            "baseline": "top",
+            "align": "center",
+            "color": "#e67315",
+            "dx": 18,
+            "dy": 13
+          },
+          "encoding": {
+            "text": {"value": ["Constantly increasing"]},
+            "opacity":{
+              "condition": [
+                {
+                  "test": "datum['Average schooling duration (years)'] == 12.04", "value": 1
+                }
+              ], 
+              "value": 0
+            }
           }
         }
       ]

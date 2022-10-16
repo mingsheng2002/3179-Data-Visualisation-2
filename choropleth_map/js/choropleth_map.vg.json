@@ -3,6 +3,11 @@
     "width": 550,
     "height": 380,
 
+    "data": {
+      "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+      "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+    },
+
     "params": [
       {
         "name": "Year_selection",
@@ -160,6 +165,40 @@
           "text": {"field": "Continent", "type": "nominal"},
           "latitude": {"field": "Latitude", "type": "quantitative"},
           "longitude": {"field": "Longitude", "type": "quantitative"}
+        }
+      },
+      {
+        "transform": [
+          {
+            "lookup": "properties.NAME",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/countryInfo.csv"
+              },
+              "key": "name",
+              "fields": ["latitude", "longitude"]
+            }
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "fontSize": 10,
+          "color": "black",
+          "fontStyle": "bold",
+          "stroke":"whitesmoke",
+          "strokeWidth": 0.015
+        },
+        "encoding": {
+          "longitude": {"field": "longitude", "type": "quantitative"},
+          "latitude": {"field": "latitude", "type": "quantitative"},
+          "text": {"field": "properties.NAME", "type": "nominal"},
+          "opacity": {
+            "condition": {
+              "test": "datum['properties.NAME'] == 'Angola' || datum['properties.NAME'] == 'Zimbabwe' || datum['properties.NAME'] == 'South Africa' || datum['properties.NAME'] == 'Botswana' ||  datum['properties.NAME'] == 'Somalia' ||  datum['properties.NAME'] == 'Cameroon'",
+              "value": 1
+            },
+            "value": 0
+          }
         }
       }
     ],

@@ -55,7 +55,7 @@
                     "field": "Country",
                     "scale" : {
                         "domain": ["Japan","Australia","Sweden","Iceland","Switzerland","France","Italy","Spain","Norway","Canada"],
-                        "range": ["black","#0570b0","lightgray","lightgray","lightgray","lightgray","lightgray","lightgray","lightgray","lightgray"]
+                        "range": ["#3690c0","#fd8d3c","#dadada","#dadada","#dadada","#dadada","#dadada","#dadada","#dadada","#dadada"]
                     }
                 } ,
             "size":{

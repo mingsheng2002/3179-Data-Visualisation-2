@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {"url": "https://raw.githubusercontent.com/mingsheng2002/3179-Data-Visualisation-Project-2/main/bubble_plot/data/Life%20Expectancy%20Data_bubbleplot.csv"},
-  "params":[{ "name" : "status_highlight" , "select" : { "type" : "point" , "fields" : ["Weight status based on BMI"]}, "bind" : "legend"}],
+  
   "hconcat": [
     {
       "height": 290,
@@ -24,40 +24,62 @@
         {
           "width": 400,
           "height": 290,
-          "mark": {"type": "point"},
-          "encoding": {
-            "x":{"field": "Alcohol consumption (litres)", "type": "quantitative",
-                  "axis":{
-                    "title": null
+          "layer":[
+            {
+              "mark": {"type": "point"},
+              "encoding": {
+                "x":{"field": "Alcohol consumption (litres)", "type": "quantitative",
+                      "axis":{
+                        "title": null
+                      }
+                    },
+                "y":{"field": "BMI", "type": "quantitative",
+                      "axis":{
+                        "title": null
+                      }
+                    },
+                "size": {
+                  "field": "Life expectancy (age)", 
+                  "type": "quantitative",
+                  "title": ["", "", "Life", "expectancy", "(age)",""],
+                  "scale":{
+                    "rangeMax": 500
                   }
                 },
-            "y":{"field": "BMI", "type": "quantitative",
-                  "axis":{
-                    "title": null
+                "color":{
+                  "field":"Weight status based on BMI", 
+                  "type": "ordinal",
+                  "title": ["Weight status", "based on BMI", ""],
+                  "scale":{
+                    "domain": ["Underweight","Normal/Healthy","Overweight","Obese"],
+                    "range": ["#08306b","#6baed6","#f4a582","#ca0020"]
                   }
-                },
-            "size": {
-              "field": "Life expectancy (age)", 
-              "type": "quantitative",
-              "title": ["", "", "Life", "expectancy", "(age)",""],
-              "scale":{
-                "rangeMax": 500
+                }
               }
             },
-            "color":{
-              "field":"Weight status based on BMI", 
-              "type": "ordinal",
-              "title": ["Weight status", "based on BMI", ""],
-              "scale":{
-                "domain": ["Underweight","Normal/Healthy","Overweight","Obese"],
-                "range": ["#08306b","#6baed6","#f4a582","#ca0020"]
+            {
+              "mark": {
+                "type": "text",
+                "fontSize": 11,
+                "fontWeight":"bold",
+                "dx":70,
+                "dy": -138,
+                "align": "left",
+                "color": "#ca0020"
+              },
+              "encoding": {
+                "text": {"value": ["Extremely high alcohol","intake could lead to obesity"]},
+                "opacity":{
+                  "condition": [
+                    {
+                      "test": "datum['Alcohol consumption (litres)'] == 11.42733333", "value": 1
+                    }
+                  ], 
+                  "value": 0
+                }
               }
-            },
-            "opacity": {
-              "condition":{ "param" : "status_highlight" , "value" : 0.6 },
-              "value":0
-            }
-          }
+            }   
+          ]
         },
         {
           "width": 400,

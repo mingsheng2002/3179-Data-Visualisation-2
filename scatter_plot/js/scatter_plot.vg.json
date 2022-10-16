@@ -164,7 +164,7 @@
             ]
           },
           {
-            "mark": {"type": "text", "color": "#7fa5b9", "fontSize": 12,
+            "mark": {"type": "text", "color": "black", "fontSize": 12,
                      "dx": 10, "xOffset": 10, "align": "center"
             },
             "encoding": {
