@@ -51,8 +51,8 @@
                   "type": "ordinal",
                   "title": ["Weight status", "based on BMI", ""],
                   "scale":{
-                    "domain": ["Underweight","Normal/Healthy","Overweight","Obese"],
-                    "range": ["#08306b","#6baed6","#f4a582","#ca0020"]
+                    "domain": ["Obese","Overweight","Normal/Healthy","Underweight"],
+                    "range": ["#ca0020","#f4a582","#6baed6","#08306b"]
                   }
                 }
               }
