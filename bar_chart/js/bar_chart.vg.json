@@ -46,7 +46,7 @@
             }
         },
         {
-            "mark": {"type": "line", "color": "#009400", "size": 2.5},
+            "mark": {"type": "line", "color": "#1d1dc6", "size": 2.5},
             "encoding": {
                 "x": {
                     "aggregate": "average",
@@ -66,7 +66,7 @@
             },
             "encoding": {
                 "text": {"value": ["World's mean: 69.22"]},
-                "color": {"value":"#009400"},
+                "color": {"value":"#1d1dc6"},
                 "opacity": {"condition":{"test": "datum.Country == 'Australia'", "value":1}, "value":0}
             }
         }
